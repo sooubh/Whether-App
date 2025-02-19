@@ -128,10 +128,11 @@ body {
     text-align: center;
 
 }
-.whether-forecaste{
+
+.whether-forecaste {
     background-color: #00feba;
     display: flex;
-    
+
 }
 
 .location-date-container {
@@ -141,36 +142,44 @@ body {
     align-items: center;
     margin-top: 50px;
 }
-.location{
+
+.location {
     display: flex;
     align-items: center;
     margin-left: 10px;
     font-size: 15px;
 }
-.location h2{
+
+.location h2 {
     margin-top: 5px;
 }
-.location h6{
+
+.location h6 {
     margin-top: 15px;
 }
-.location img{
+
+.location img {
     width: 25px;
     margin-right: 5px;
 }
-.date{
+
+.date {
     display: flex;
     align-items: center;
     margin-left: 10px;
     font-size: 20px;
 }
-.date img{
+
+.date img {
     width: 20px;
     margin-right: 5px;
 }
-.date h5{
-    margin-top: 5px;    
+
+.date h5 {
+    margin-top: 5px;
 }
-.whether-forecast-container{
+
+.whether-forecast-container {
     display: flex;
     gap: 15px;
     overflow: scroll;
@@ -179,18 +188,22 @@ body {
     padding-bottom: 10px;
 
 }
-.whether-forecast-container::-webkit-scrollbar{
+
+.whether-forecast-container::-webkit-scrollbar {
     height: 8px;
 }
-.whether-forecast-container::-webkit-scrollbar-track{
-    background: rgba(0, 0, 0 , 0.1);
+
+.whether-forecast-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
     border-radius: 99px;
 }
-.whether-forecast-container::-webkit-scrollbar-thumb{
-    background-color: rgba(0, 0, 0 , 0.15);
+
+.whether-forecast-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
     border-radius: 99px;
 }
-.forecaste-items{
+
+.forecaste-items {
     min-width: 70px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -202,16 +215,17 @@ body {
     padding: 10px;
     transition: 0.3s background-color;
 }
-.forecaste-items:hover{
+
+.forecaste-items:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-.forecaste-icon{
+
+.forecaste-icon {
     width: 49px;
     margin-top: 10px;
 }
-.forecaste-items h3{
+
+.forecaste-items h3, .forecaste-items h2{
     font-size: 15px;
 
 }
-
-

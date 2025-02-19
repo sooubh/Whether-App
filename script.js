@@ -25,37 +25,43 @@ const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
         document.querySelector('.humidity').innerText = data.main.humidity + "%";
         document.querySelector('.wind').innerText = data.wind.speed + "km/h";
 
+        // today date
         let date = new Date(data2.list[0].dt_txt);
         let day = date.getDate();
         let month = date.getMonth();
         let year = date.getFullYear();
        let month2 = months[month] ;
         document.querySelector('.current-date').innerText = day + ", " + month2 + " " + year;
+        // today date end
 
-        document.querySelector('.day1').innerText = data2.list[0].dt_txt;
-        let day1 = date.getDay();
-        let month1 = date.getMonth();
-        
-        document.querySelector('.day2').innerText = data2.list[8].dt_txt;
-        document.querySelector('.day3').innerText = data2.list[16].dt_txt;
-        document.querySelector('.day4').innerText = data2.list[24].dt_txt;
-        document.querySelector('.day5').innerText = data2.list[32].dt_txt;
-        document.querySelector('.day6').innerText = data2.list[39].dt_txt;
+        const months1 = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+function formatForecastDate(index, selector) {
+    if (data2.list[index]) {
+        let forecastDate = new Date(data2.list[index].dt_txt);
+        let day = forecastDate.getDate();
+        let monthName = months1[forecastDate.getMonth()];
+        document.querySelector(selector).innerText = `${day}, ${monthName}`;
+    }
+}
+const forecastIndexes = [0, 8, 16, 24, 32,39]; 
+const selectors = ['.day1', '.day2', '.day3', '.day4', '.day5', '.day6'];
 
-        document.querySelector('.temp1').innerText = Math.round(data2.list[0].main.temp) + "°C";
-        document.querySelector('.temp2').innerText = Math.round(data2.list[8].main.temp) + "°C";
-        document.querySelector('.temp3').innerText = Math.round(data2.list[16].main.temp) + "°C";
-        document.querySelector('.temp4').innerText = Math.round(data2.list[24].main.temp) + "°C";
-        document.querySelector('.temp5').innerText = Math.round(data2.list[32].main.temp) + "°C";
-        document.querySelector('.temp6').innerText = Math.round(data2.list[39].main.temp) + "°C";
-        
-// forecaste    
+forecastIndexes.forEach((index, i) => formatForecastDate(index, selectors[i]));
 
+function formatForecastTemp(index, selector) {
+    if (data2.list[index]) {
+        let forecastTemp = Math.round(data2.list[index].main.temp);
+        document.querySelector(selector).innerText = `${forecastTemp}°C`;
 
+    }
+}
+const forecastIndexes2 = [0, 8, 16, 24, 32,39];
+const selectors2 = ['.temp1', '.temp2', '.temp3', '.temp4', '.temp5', '.temp6'];
+forecastIndexes2.forEach((index, i) => formatForecastTemp(index, selectors2[i]));
 console.log(data2);
 
-        if (data.weather[0].main == "Clear") {
+      if (data.weather[0].main == "Clear") {
             whetherIcon.src = "images/clear.png";
         }
         else if (data.weather[0].main == "Clouds") {
