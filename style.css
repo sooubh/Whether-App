@@ -170,3 +170,48 @@ body {
 .date h5{
     margin-top: 5px;    
 }
+.whether-forecast-container{
+    display: flex;
+    gap: 15px;
+    overflow: scroll;
+    overflow-y: hidden;
+    margin-top: 30px;
+    padding-bottom: 10px;
+
+}
+.whether-forecast-container::-webkit-scrollbar{
+    height: 8px;
+}
+.whether-forecast-container::-webkit-scrollbar-track{
+    background: rgba(0, 0, 0 , 0.1);
+    border-radius: 99px;
+}
+.whether-forecast-container::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0 , 0.15);
+    border-radius: 99px;
+}
+.forecaste-items{
+    min-width: 70px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: 0.3s background-color;
+}
+.forecaste-items:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.forecaste-icon{
+    width: 49px;
+    margin-top: 10px;
+}
+.forecaste-items h3{
+    font-size: 15px;
+
+}
+
+
