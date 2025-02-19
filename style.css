@@ -1,3 +1,4 @@
+/* Base Styles (for laptops and larger screens) */
 * {
     margin: 0;
     padding: 0;
@@ -8,17 +9,17 @@
 body {
     background-color: #000;
     color: #ffffff;
+    font-size: 1rem; /* 16px */
 }
 
 .cards {
-
     width: 90%;
     max-width: 470px;
-    margin: 50px auto 0;
+    margin: 3.125rem auto 3.125rem auto; /* 50px */
     text-align: center;
     background: linear-gradient(140deg, #00feba, #5b548a);
-    border-radius: 20px;
-    padding: 40px 35px;
+    border-radius: 1.25rem; /* 20px */
+    padding: 2.5rem 2.1875rem; /* 40px 35px */
 }
 
 .search {
@@ -30,15 +31,15 @@ body {
 
 .search input {
     width: 80%;
-    padding: 10px 25px;
+    padding: 0.625rem 1.5625rem; /* 10px 25px */
     border: 0;
     outline: 0;
-    font-size: 16px;
+    font-size: 1rem; /* 16px */
     flex: 1;
-    margin-right: 16px;
-    border-radius: 30px;
+    margin-right: 1rem; /* 16px */
+    border-radius: 1.875rem; /* 30px */
     color: #555;
-    height: 50px;
+    height: 3.125rem; /* 50px */
 }
 
 .search button {
@@ -47,13 +48,12 @@ body {
     background: #effffc;
     border-radius: 50%;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
-
+    width: 3.125rem; /* 50px */
+    height: 3.125rem; /* 50px */
 }
 
 .search button img {
-    width: 23px;
+    width: 1.4375rem; /* 23px */
 }
 
 .search button:hover {
@@ -61,20 +61,20 @@ body {
 }
 
 .weather-icon {
-    width: 170px;
-    margin-top: 30px;
+    width: 10.625rem; /* 170px */
+    margin-top: 1.875rem; /* 30px */
 }
 
 .weather h1 {
-    font-size: 60px;
+    font-size: 3.75rem; /* 60px */
     font-weight: 500;
     color: #ffffff;
 }
 
 .weather h2 {
-    font-size: 25px;
+    font-size: 1.5625rem; /* 25px */
     font-weight: 400;
-    margin-top: -10px;
+    margin-top: -0.625rem; /* -10px */
     color: #ffffff;
     display: block;
 }
@@ -83,8 +83,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 50px;
-    padding: 0 20px;
+    margin-top: 3.125rem; /* 50px */
+    padding: 0 1.25rem; /* 0 20px */
 }
 
 .col {
@@ -94,14 +94,14 @@ body {
 }
 
 .col img {
-    width: 40px;
-    margin-right: 10px;
+    width: 2.5rem; /* 40px */
+    margin-right: 0.625rem; /* 10px */
 }
 
 .humidity,
 .wind {
-    font-size: 23px;
-    margin-top: -6px;
+    font-size: 1.4375rem; /* 23px */
+    margin-top: -0.375rem; /* -6px */
 }
 
 .weather {
@@ -111,28 +111,26 @@ body {
 .error {
     display: none;
     text-align: left;
-    margin-left: 10px;
-    font-size: 14px;
-    margin-top: 14px;
+    margin-left: 0.625rem; /* 10px */
+    font-size: 0.875rem; /* 14px */
+    margin-top: 0.875rem; /* 14px */
 }
 
 .climate {
-    margin-top: -9px;
-    margin-bottom: 5px;
+    margin-top: -0.5625rem; /* -9px */
+    margin-bottom: 0.3125rem; /* 5px */
 }
 
 .country {
-    font-size: 10px;
-    margin-left: 7px;
-    margin-top: 5px;
+    font-size: 0.625rem; /* 10px */
+    margin-left: 0.4375rem; /* 7px */
+    margin-top: 0.3125rem; /* 5px */
     text-align: center;
-
 }
 
 .whether-forecaste {
     background-color: #00feba;
     display: flex;
-
 }
 
 .location-date-container {
@@ -140,80 +138,84 @@ body {
     color: #ffffff;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 3.125rem; /* 50px */
 }
 
 .location {
     display: flex;
     align-items: center;
-    margin-left: 10px;
-    font-size: 15px;
+    margin-left: 0.625rem; /* 10px */
+    font-size: 0.9375rem; /* 15px */
 }
 
 .location h2 {
-    margin-top: 5px;
+    margin-top: 0.3125rem; /* 5px */
 }
 
 .location h6 {
-    margin-top: 15px;
+    margin-top: 0.9375rem; /* 15px */
 }
 
 .location img {
-    width: 25px;
-    margin-right: 5px;
+    width: 1.5625rem; /* 25px */
+    margin-right: 0.3125rem; /* 5px */
 }
 
 .date {
     display: flex;
     align-items: center;
-    margin-left: 10px;
-    font-size: 20px;
+    margin-left: 0.625rem; /* 10px */
+    font-size: 1.25rem; /* 20px */
 }
 
 .date img {
-    width: 20px;
-    margin-right: 5px;
+    width: 1.25rem; /* 20px */
+    margin-right: 0.3125rem; /* 5px */
 }
 
 .date h5 {
-    margin-top: 5px;
+    margin-top: 0.3125rem; /* 5px */
 }
 
 .whether-forecast-container {
     display: flex;
-    gap: 15px;
+    gap: 0.9375rem; /* 15px */
     overflow: scroll;
     overflow-y: hidden;
-    margin-top: 30px;
-    padding-bottom: 10px;
-
+    margin-top: 1.875rem; /* 30px */
+    padding-bottom: 0.625rem; /* 10px */
+    overflow-x: auto;
+scroll-snap-type: x mandatory;
+  
 }
-
 .whether-forecast-container::-webkit-scrollbar {
-    height: 8px;
+    height: 0.5rem; /* 8px */
 }
 
 .whether-forecast-container::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.1);
-    border-radius: 99px;
+    border-radius: 6.1875rem; /* 99px */
 }
 
 .whether-forecast-container::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.15);
-    border-radius: 99px;
+    border-radius: 6.1875rem; /* 99px */
 }
 
 .forecaste-items {
-    min-width: 70px;
+    min-width: 6rem;
+   
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    border-radius: 0.625rem; /* 10px */
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 0.375rem; /* 6px */
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 0.625rem; /* 10px */
     transition: 0.3s background-color;
+  scroll-snap-align: start;
+    flex: 5 0 auto; /* Allows items to grow but not shrink */
 }
 
 .forecaste-items:hover {
@@ -225,12 +227,88 @@ body {
 .forecaste-icon-3,
 .forecaste-icon-4, 
 .forecaste-icon-5,
-.forecaste-icon-6{
-    width: 49px;
-    margin-top: 10px;
+.forecaste-icon-6 {
+    width: 3.0625rem; /* 49px */
+    margin-top: 0.625rem; /* 10px */
 }
 
-.forecaste-items h3, .forecaste-items h2{
-    font-size: 15px;
+.forecaste-items h3, .forecaste-items h2 {
+    font-size: 0.9375rem; /* 15px */
+}
 
+/* Media Queries for Responsiveness */
+
+/* For Mobile Devices (up to 767px) */
+@media (max-width: 767px) {
+    .cards {
+        padding: 1.5rem 1rem; /* Reduce padding for smaller screens */
+    }
+
+    .weather h1 {
+        font-size: 2.5rem; /* 40px */
+    }
+
+    .weather h2 {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .details {
+
+        gap: 1.4rem; /* Add gap between items */
+    }
+
+    .whether-forecast-container {
+   
+        gap: 0.5rem; /* Reduce gap between forecast items */
+    }
+
+    .forecaste-items {
+        min-width: 3.75rem; /* 60px */
+     
+    }
+}
+
+/* For Tablets (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .cards {
+        max-width: 600px; /* Increase max-width for tablets */
+    }
+
+    .weather h1 {
+        font-size: 3rem; /* 48px */
+    }
+
+    .weather h2 {
+        font-size: 1.5rem; /* 24px */
+    }
+}
+
+/* For iPads and Small Laptops (1024px to 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .cards {
+        max-width: 700px; /* Increase max-width for iPads */
+    }
+
+    .weather h1 {
+        font-size: 3.5rem; /* 56px */
+    }
+
+    .weather h2 {
+        font-size: 1.75rem; /* 28px */
+    }
+}
+
+/* For MacBooks and Larger Screens (1280px and above) */
+@media (min-width: 1280px) {
+    .cards {
+        max-width: 800px; /* Increase max-width for larger screens */
+    }
+
+    .weather h1 {
+        font-size: 4rem; /* 64px */
+    }
+
+    .weather h2 {
+        font-size: 2rem; /* 32px */
+    }
 }
