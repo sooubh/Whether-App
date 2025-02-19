@@ -1,17 +1,19 @@
 const apikey = "94a008cd38dd31fcbdf791574c23f68d";
-const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiurl = "https://api.openweathermap.org/data/2.5/";
 const search = document.querySelector(".search input");
 const form = document.querySelector(".search button");
 const whetherIcon = document.querySelector(".weather-icon");
 
 async function getWeather(city) {
-    const response = await fetch(apiurl + city + `&appid=${apikey}`);
+    const response = await fetch(apiurl +`weather`+`?units=metric&q=` + city + `&appid=${apikey}`);
+    const response2 = await fetch(apiurl +`forecast`+`?units=metric&q=` + city + `&appid=${apikey}`);
     if (response.status == 404) {
         document.querySelector('.error').style.display = "block";
-        document.querySelector('.whether').style.display = "none";
+        document.querySelector('.weather').style.display = "none";
     }
     else {
         const data = await response.json();
+        const data2 = await response2.json();
 
         document.querySelector('.city').innerText = data.name;
         document.querySelector('.country').innerText = data.sys.country;
@@ -19,8 +21,19 @@ async function getWeather(city) {
         document.querySelector('.temp').innerText = Math.round(data.main.temp) + "°C";
         document.querySelector('.humidity').innerText = data.main.humidity + "%";
         document.querySelector('.wind').innerText = data.wind.speed + "km/h";
+// forecaste    
 
-console.log(data);
+//write a program for date extraction from the api response and display it in the html
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+
+let date = new Date(data2.list[0].dt_txt);
+        let day = date.getDate();
+        let month = date.getMonth();
+        let year = date.getFullYear();
+       let month2 = months[month] ;
+        document.querySelector('.current-date').innerText = day + ", " + month2 + " " + year;
 
         if (data.weather[0].main == "Clear") {
             whetherIcon.src = "images/clear.png";
