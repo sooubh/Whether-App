@@ -5,8 +5,11 @@ const form = document.querySelector(".search button");
 const whetherIcon = document.querySelector(".weather-icon");
 
 async function getWeather(city) {
-    const response = await fetch(apiurl +`weather`+`?units=metric&q=` + city + `&appid=${apikey}`);
-    const response2 = await fetch(apiurl +`forecast`+`?units=metric&q=` + city + `&appid=${apikey}`);
+    const response = await fetch(apiurl +`weather`+`?units=metric&q=` + city.trim() + `&appid=${apikey}`);
+    const response2 = await fetch(apiurl +`forecast`+`?units=metric&q=` + city.trim() + `&appid=${apikey}`);
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
     if (response.status == 404) {
         document.querySelector('.error').style.display = "block";
         document.querySelector('.weather').style.display = "none";
@@ -21,19 +24,36 @@ async function getWeather(city) {
         document.querySelector('.temp').innerText = Math.round(data.main.temp) + "°C";
         document.querySelector('.humidity').innerText = data.main.humidity + "%";
         document.querySelector('.wind').innerText = data.wind.speed + "km/h";
-// forecaste    
 
-//write a program for date extraction from the api response and display it in the html
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    
-
-let date = new Date(data2.list[0].dt_txt);
+        let date = new Date(data2.list[0].dt_txt);
         let day = date.getDate();
         let month = date.getMonth();
         let year = date.getFullYear();
        let month2 = months[month] ;
         document.querySelector('.current-date').innerText = day + ", " + month2 + " " + year;
+
+        document.querySelector('.day1').innerText = data2.list[0].dt_txt;
+        let day1 = date.getDay();
+        let month1 = date.getMonth();
+        
+        document.querySelector('.day2').innerText = data2.list[8].dt_txt;
+        document.querySelector('.day3').innerText = data2.list[16].dt_txt;
+        document.querySelector('.day4').innerText = data2.list[24].dt_txt;
+        document.querySelector('.day5').innerText = data2.list[32].dt_txt;
+        document.querySelector('.day6').innerText = data2.list[39].dt_txt;
+
+
+        document.querySelector('.temp1').innerText = Math.round(data2.list[0].main.temp) + "°C";
+        document.querySelector('.temp2').innerText = Math.round(data2.list[8].main.temp) + "°C";
+        document.querySelector('.temp3').innerText = Math.round(data2.list[16].main.temp) + "°C";
+        document.querySelector('.temp4').innerText = Math.round(data2.list[24].main.temp) + "°C";
+        document.querySelector('.temp5').innerText = Math.round(data2.list[32].main.temp) + "°C";
+        document.querySelector('.temp6').innerText = Math.round(data2.list[39].main.temp) + "°C";
+        
+// forecaste    
+
+
+console.log(data2);
 
         if (data.weather[0].main == "Clear") {
             whetherIcon.src = "images/clear.png";
