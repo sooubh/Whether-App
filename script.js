@@ -14,10 +14,13 @@ async function getWeather(city) {
         const data = await response.json();
 
         document.querySelector('.city').innerText = data.name;
+        document.querySelector('.country').innerText = data.sys.country;
+        document.querySelector('.climate').innerText = data.weather[0].main;
         document.querySelector('.temp').innerText = Math.round(data.main.temp) + "°C";
         document.querySelector('.humidity').innerText = data.main.humidity + "%";
         document.querySelector('.wind').innerText = data.wind.speed + "km/h";
 
+console.log(data);
 
         if (data.weather[0].main == "Clear") {
             whetherIcon.src = "images/clear.png";
@@ -36,6 +39,7 @@ async function getWeather(city) {
         document.querySelector('.weather').style.display = "block";
         document.querySelector('.error').style.display = "none";
     }
+    
 }
 form.addEventListener("click", () => {
     (getWeather(search.value))

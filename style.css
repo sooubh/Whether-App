@@ -11,7 +11,7 @@ body {
 }
 
 .cards {
-    
+
     width: 90%;
     max-width: 470px;
     margin: 50px auto 0;
@@ -92,21 +92,81 @@ body {
     align-items: center;
     text-align: center;
 }
+
 .col img {
     width: 40px;
     margin-right: 10px;
 }
-.humidity, .wind {
+
+.humidity,
+.wind {
     font-size: 23px;
     margin-top: -6px;
-    }
-    .weather{
-        display: none;
-    }
-    .error{
-        display: none;
-        text-align: left;
-        margin-left: 10px;
-        font-size: 14px;
-        margin-top: 14px;
-    }
+}
+
+.weather {
+    display: none;
+}
+
+.error {
+    display: none;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 14px;
+}
+
+.climate {
+    margin-top: -9px;
+    margin-bottom: 5px;
+}
+
+.country {
+    font-size: 10px;
+    margin-left: 7px;
+    margin-top: 5px;
+    text-align: center;
+
+}
+.whether-forecaste{
+    background-color: #00feba;
+    display: flex;
+    
+}
+
+.location-date-container {
+    display: flex;
+    color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+.location{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 15px;
+}
+.location h2{
+    margin-top: 5px;
+}
+.location h6{
+    margin-top: 15px;
+}
+.location img{
+    width: 25px;
+    margin-right: 5px;
+}
+.date{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 15px;
+}
+.date img{
+    width: 20px;
+    margin-right: 5px;
+}
+.date h5{
+    margin-top: 5px;    
+}
