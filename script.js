@@ -25,6 +25,47 @@ const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
         document.querySelector('.humidity').innerText = data.main.humidity + "%";
         document.querySelector('.wind').innerText = data.wind.speed + "km/h";
 
+document.querySelector('.weather1').innerHTML= data2.list[0].weather[0].main;
+document.querySelector('.weather2').innerHTML= data2.list[8].weather[0].main;
+document.querySelector('.weather3').innerHTML= data2.list[16].weather[0].main;
+document.querySelector('.weather4').innerHTML= data2.list[24].weather[0].main;
+document.querySelector('.weather5').innerHTML= data2.list[32].weather[0].main;
+document.querySelector('.weather6').innerHTML= data2.list[39].weather[0].main;
+
+// Helper function to return the corresponding icon path
+function getWeatherIcon(weatherType) {
+  switch (weatherType) {
+    case "Clouds":
+      return "images/clouds.png";
+    case "Clear":
+      return "images/clear.png";
+    case "Rain":
+      return "images/rain.png";
+    case "Drizzle":
+      return "images/drizzle.png";
+    case "Snow":
+      return "images/snow.png";
+    case "Mist":
+      return "images/clear.png";
+    default:
+      return "images/default.png"; // Fallback icon
+  }
+}
+
+const indices = [0, 8, 16, 24, 32, 39];
+
+for (let i = 0; i < indices.length; i++) {
+  // Get the weather type from the API data
+  const weatherMain = data2.list[indices[i]].weather[0].main;
+  
+  // Retrieve the corresponding icon using our helper function
+  const iconSrc = getWeatherIcon(weatherMain);
+  
+  // Update the image source for the forecast element
+  document.querySelector(`.forecaste-icon-${i + 1}`).src = iconSrc;
+}
+
+
         // today date
         let date = new Date(data2.list[0].dt_txt);
         let day = date.getDate();
@@ -43,6 +84,7 @@ function formatForecastDate(index, selector) {
         let monthName = months1[forecastDate.getMonth()];
         document.querySelector(selector).innerText = `${day}, ${monthName}`;
     }
+    
 }
 const forecastIndexes = [0, 8, 16, 24, 32,39]; 
 const selectors = ['.day1', '.day2', '.day3', '.day4', '.day5', '.day6'];
@@ -55,11 +97,11 @@ function formatForecastTemp(index, selector) {
         document.querySelector(selector).innerText = `${forecastTemp}°C`;
 
     }
+    
 }
 const forecastIndexes2 = [0, 8, 16, 24, 32,39];
 const selectors2 = ['.temp1', '.temp2', '.temp3', '.temp4', '.temp5', '.temp6'];
 forecastIndexes2.forEach((index, i) => formatForecastTemp(index, selectors2[i]));
-console.log(data2);
 
       if (data.weather[0].main == "Clear") {
             whetherIcon.src = "images/clear.png";
@@ -80,6 +122,7 @@ console.log(data2);
     }
     
 }
+
 form.addEventListener("click", () => {
     (getWeather(search.value))
 

@@ -220,7 +220,12 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.forecaste-icon {
+.forecaste-icon-1,
+.forecaste-icon-2,
+.forecaste-icon-3,
+.forecaste-icon-4, 
+.forecaste-icon-5,
+.forecaste-icon-6{
     width: 49px;
     margin-top: 10px;
 }
